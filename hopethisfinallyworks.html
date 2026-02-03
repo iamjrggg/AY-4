@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For A Y ❤️</title>
+
+    <!-- Prettier fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card {
+            background: #E6E6FA; /* lavender */
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            width: 320px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        h1 {
+            color: #ff4b5c;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        button {
+            margin-top: 10px;
+            background: #ff4b5c;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button:hover {
+            background: #ff1f3d;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 15.5px;
+            color: #3b3b3b;
+            display: none;
+            line-height: 1.7;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -20px;
+            color: #ff4b5c;
+            animation: floatUp linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-110vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>A Y ❤️</h1>
+    <p>I missssss you smmmmmmm</p>
+
+    <button onclick="showMessage()">Tap this</button>
+
+    <p id="message">
+        HEYAAAAAA A Y,<br>
+        How you doing bubbasaurus,heh,<br>
+        You know how i say that you got a dino smile? Bubbasaurus suits you ahahahahha.<br><br>
+        I know this aint much but i tried making this,with the help of gpt and lots of tweaking on my side ya know.<br>
+        Ill get better at this pakka. I miss you sweetheart.<br>
+        SM.Do everything jaldiiii se wahan and come back here.Cuz gayi tu hai but homeless mujhe feel ho raha hai istg.<br><br>
+        Chall bye bye subah itna hi ban saka mere se. I L*** You (laughing emoji jahan pe wo embarrased be hai aur ched bhi raha hai). Miss you Sm sweetheart. 💖
+    </p>
+</div>
+
+<script>
+    function showMessage() {
+        document.getElementById("message").style.display = "block";
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+        heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+    }
+
+    setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
